@@ -61,7 +61,7 @@ public class Adressformular extends Application {
 
 
         // set properties
-        root.setGridLinesVisible(true);
+       // root.setGridLinesVisible(true);
         root.setAlignment(Pos.CENTER);
         GridPane.setHalignment(lblHeadline, HPos.RIGHT);
         GridPane.setHalignment(buttonOk, HPos.RIGHT);

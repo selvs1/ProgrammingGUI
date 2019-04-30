@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,6 +10,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.beans.EventHandler;
 
 
 public class MyApp extends Application {
@@ -43,6 +46,7 @@ public class MyApp extends Application {
         // Objekte erstellen
         Button buttonStart = new Button("Start");
         Button buttonStopp = new Button("Stopp");
+        buttonStopp.setDisable(true);
         Button buttonReset = new Button("Reset");
         Label lblStatus = new Label("getStatus");
         HBox childLeftSub = new HBox();
@@ -56,8 +60,9 @@ public class MyApp extends Application {
 
         // custom design finish
 
+        //BorderPane.setMargin(childRight, new Insets(10, 10, 5, 10));
 
-        Scene scene = new Scene(root, 300, 300);
+        Scene scene = new Scene(root, 350, 300);
         stage.setTitle("My App");
         stage.setScene(scene);
         stage.show();
