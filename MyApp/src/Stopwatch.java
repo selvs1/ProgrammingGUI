@@ -86,7 +86,7 @@ public class Stopwatch extends BorderPane {
         Platform.runLater(() -> {
             // nicht ressourcen schonend? abkl. ev. mit $
             lblTmr.setText(String.format("%02d:%02d:%02d:%02d", timer.getHours(), timer.getMinutes(), timer.getSeconds(), (int) (timer.getTime() * 100) % 100));
-            System.out.println("dini");
+            System.out.println("test");
         });
 
         if ((timer.isRunning())) {
