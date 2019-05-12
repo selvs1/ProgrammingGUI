@@ -108,7 +108,6 @@ public class Timer implements Runnable {
             thread.setDaemon(true);
             thread.setPriority(Thread.MAX_PRIORITY);
             thread.start();
-            //TODO: noch zu implementieren
             gui.update();
         }
     }
