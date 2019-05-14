@@ -6,20 +6,28 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.Observable;
+import java.util.Observer;
 
-public class Stopwatch extends BorderPane {
 
-    private Timer timer;
+public class Stopwatch extends BorderPane implements Observer {
+
+    // keine unnötige Instanzvariablen erstellen
+    private final Timer timer;
     private Label lblTmr;
     private Label lblStatus;
     private Button buttonStart;
     private Button buttonStopp;
 
-    public Stopwatch() {
 
-        timer = new Timer(10);
+    public Stopwatch(final Timer timer) {
+
+/*        timer = new Timer(10);
         timer.attach(this);
-        timer.run();
+        timer.run();*/
+
+        this.timer = timer;
+        this.timer.addObserver(this);
 
 
         // custom design start
@@ -79,21 +87,30 @@ public class Stopwatch extends BorderPane {
 
     }
 
-    public void update() {
+
+    @Override
+    public void update(Observable o, Object arg) {
+
         //Display Update
         Platform.runLater(() -> {
             // nicht ressourcen schonend? abkl. ev. mit $
             lblTmr.setText(String.format("%02d:%02d:%02d:%02d", timer.getHours(), timer.getMinutes(), timer.getSeconds(), (int) (timer.getTime() * 100) % 100));
-            System.out.println("test");
+            //System.out.println("test");
         });
 
         if ((timer.isRunning())) {
             lblStatus.setText("Running");
+            // Das mit dem Button ausgrauen hier implementieren
         } else {
             lblStatus.setText("Stopped");
         }
 
 
-    }
+        // der Scene Graf darf nur durch Gui Thread verändert werden
 
+    }
 }
+
+
+
+// Platform.runLater -> nur dort wo notwendig ist verwenden

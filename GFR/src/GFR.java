@@ -62,6 +62,8 @@ public class GFR extends Application {
         lblGfrResult = new Label("getOutput");
 
         btnCalc = new Button("Berechnen");
+        // geht auch setOnAction
+
         btnCalc.addEventHandler(ActionEvent.ACTION, event -> {
             // Formel ((140-Alter) * Gewicht) * [falls Weiblich: 0.85])/(72*[Serum Kreatinini in mg/dl])
             int tmpAge = Integer.parseInt(cbAlter.getSelectionModel().getSelectedItem().toString());
