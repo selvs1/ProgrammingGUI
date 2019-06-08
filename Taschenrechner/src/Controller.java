@@ -5,7 +5,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.io.*;
+import java.util.Scanner;
+
 public class Controller {
+
 
     private Calculator model;
 
@@ -90,19 +94,25 @@ public class Controller {
 
     public void init(Calculator model) {
         this.model = model;
+        model.loadData();
+        updateHistory();
 //        this.model.addObserver(this);
     }
 
     @FXML
     protected void initialize() {
-//        lvHistory = new ListView<String>();
-        //updateHistory();
-
+        System.out.println("hahah");
+//        model.loadData();
+//        lvHistory.getItems().addAll(model.getHistory());
     }
+
 
     private void updateHistory() {
         lvHistory.getItems().clear();
         lvHistory.getItems().addAll(model.getHistory());
+
+
+
     }
 
 

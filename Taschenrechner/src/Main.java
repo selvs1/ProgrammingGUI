@@ -12,6 +12,8 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CalculatorGUI.fxml"));
 
+        System.out.println(getClass().getResource("Backup"));
+
         Parent root = (Parent) loader.load();
 
         Calculator model = new Calculator();
