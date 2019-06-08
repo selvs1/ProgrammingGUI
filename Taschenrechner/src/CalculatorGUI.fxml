@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <Label text="Calculator" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="tfOperand1" />
+            <Label fx:id="lblOperator" text=" - " />
+            <TextField fx:id="tfOperand2" />
+            <Label text=" = " />
+            <Label fx:id="lblResult" text="Resultat" />
+         </children>
+      </HBox>
+   </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnPlus" mnemonicParsing="false" onAction="#handleClickPlus" text="+" />
+            <Button fx:id="btnMinus" mnemonicParsing="false" onAction="#handleClickMinus" text="-" />
+            <Button fx:id="btnMultiply" mnemonicParsing="false" onAction="#handleClickMultiply" text="*" />
+            <Button fx:id="btnDivide" mnemonicParsing="false" onAction="#handleClickDivide" text="/" />
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <ListView fx:id="lvHistory" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

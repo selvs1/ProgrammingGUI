@@ -1,7 +1,6 @@
 import javafx.application.Platform;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -32,7 +31,32 @@ public class Stopwatch extends BorderPane implements Observer {
 
         // custom design start
 
+
+
         // Designbereich
+
+        // Menubar
+        MenuBar menuBar = new MenuBar();
+
+        Menu fileMenu = new Menu("File");
+        Menu helpMenu = new Menu("Help");
+
+        MenuItem newItem = new Menu("New");
+        MenuItem closeItem = new Menu("Close all");
+        MenuItem aboutItem = new Menu("About");
+
+        closeItem.setOnAction(event -> {
+            System.exit(0);
+        });
+
+        fileMenu.getItems().addAll(newItem, closeItem);
+        helpMenu.getItems().addAll(aboutItem);
+
+        menuBar.getMenus().addAll(fileMenu, helpMenu);
+
+
+
+
         // Struktur rechts
         HBox display = new HBox();
         this.setCenter(display);
@@ -53,16 +77,12 @@ public class Stopwatch extends BorderPane implements Observer {
         // Objekte erstellen
         buttonStart = new Button("Start");
         buttonStart.setOnAction(event -> {
-            buttonStart.setDisable(true);
-            buttonStopp.setDisable(false);
             timer.start();
         });
 
 
         buttonStopp = new Button("Stopp");
         buttonStopp.setOnAction(event -> {
-            buttonStopp.setDisable(true);
-            buttonStart.setDisable(false);
             timer.stop();
         });
         Button buttonReset = new Button("Reset");
@@ -80,6 +100,7 @@ public class Stopwatch extends BorderPane implements Observer {
         childLeft.getChildren().addAll(controls, lblStatus);
 
 
+        this.setTop(menuBar);
         // custom design finish
 
         //Locher: BorderPane.setMargin(childRight, new Insets(10, 10, 5, 10));
@@ -100,9 +121,13 @@ public class Stopwatch extends BorderPane implements Observer {
 
         if ((timer.isRunning())) {
             lblStatus.setText("Running");
+            buttonStart.setDisable(true);
+            buttonStopp.setDisable(false);
             // Das mit dem Button ausgrauen hier implementieren
         } else {
             lblStatus.setText("Stopped");
+            buttonStopp.setDisable(true);
+            buttonStart.setDisable(false);
         }
 
 

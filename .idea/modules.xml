@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataEditorApp/DataEditorApp.iml" filepath="$PROJECT_DIR$/DataEditorApp/DataEditorApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/GFR/GFR.iml" filepath="$PROJECT_DIR$/GFR/GFR.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApp/MyApp.iml" filepath="$PROJECT_DIR$/MyApp/MyApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProgrammingGUI.iml" filepath="$PROJECT_DIR$/ProgrammingGUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Taschenrechner/Taschenrechner.iml" filepath="$PROJECT_DIR$/Taschenrechner/Taschenrechner.iml" />
     </modules>
   </component>
 </project>
