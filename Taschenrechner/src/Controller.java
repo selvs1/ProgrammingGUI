@@ -27,6 +27,7 @@ public class Controller {
 
     @FXML
     private Label lblResult;
+/*
 
     @FXML
     private Button btnPlus;
@@ -39,6 +40,7 @@ public class Controller {
 
     @FXML
     private Button btnDivide;
+*/
 
     @FXML
     private ListView<String> lvHistory;
